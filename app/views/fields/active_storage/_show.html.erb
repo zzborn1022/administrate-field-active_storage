@@ -16,5 +16,7 @@ By default, the attribute is rendered as an image tag.
 %>
 
 <% if field.attached? %>
-  <%= render partial: 'fields/active_storage/items', locals: { field: field } %>
+  <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+    <%= render partial: 'fields/active_storage/items', locals: { field: field } %>
+  </div>
 <% end %>

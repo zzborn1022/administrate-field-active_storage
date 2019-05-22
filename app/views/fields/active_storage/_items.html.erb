@@ -19,7 +19,7 @@ This partial renders one or more attachments
 %>
 
 <% attachments.each do |attachment| %>
-  <div class="attachments-listing">
+  <div class="attachments-listing" style="width: 49%">
     <%= render partial: 'fields/active_storage/item', locals: { field: field, attachment: attachment, removable: removable } %>
   </div>
 <% end %>
