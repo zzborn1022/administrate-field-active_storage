@@ -18,8 +18,10 @@ This partial renders one or more attachments
   removable = local_assigns.fetch(:removable, false)
 %>
 
-<% attachments.each do |attachment| %>
-  <div class="attachments-listing" style="width: 49%">
-    <%= render partial: 'fields/active_storage/item', locals: { field: field, attachment: attachment, removable: removable } %>
-  </div>
-<% end %>
+<div class="sort-me" data-url="<%= sort_attachments_admin_products_path %>">
+  <% attachments.sort_by(&:position).each do |attachment| %>
+    <div id="<%= dom_id(attachment) %>" class="attachments-listing">
+      <%= render partial: 'fields/active_storage/item', locals: { field: field, attachment: attachment, removable: removable } %>
+    </div>
+  <% end %>
+</div>
